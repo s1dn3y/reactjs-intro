@@ -1,0 +1,21 @@
+{
+  "name": "reactjs-intro",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://s1dn3y@github.com/s1dn3y/reactjs-intro.git"
+  },
+  "author": "Sidney Amaral",
+  "bugs": {
+    "url": "https://github.com/s1dn3y/reactjs-intro/issues"
+  },
+  "devDependencies": {
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
