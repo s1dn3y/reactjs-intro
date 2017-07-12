@@ -1,0 +1,12 @@
+
+- Virtual DOM
+    - Um modelo (JavaScript) do DOM real que permite computar as diferenças [diffing] entre o real e o virtual e aplicá-las [patch] no real, para ganho de performance na renderização
+https://github.com/Matt-Esch/virtual-dom
+https://www.codecademy.com/articles/react-virtual-dom
+https://pt.stackoverflow.com/questions/43169/qual-a-diferen%C3%A7a-entre-dom-e-virtual-dom
+http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
+
+- Shadow DOM
+https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom?hl=pt-br
+http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM
