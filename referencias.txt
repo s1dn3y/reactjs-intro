@@ -1,3 +1,5 @@
+- ReactJS
+https://braziljs.org/blog/react-do-basico-ao-avancado-parte-1/
 
 - Virtual DOM
     - Um modelo (JavaScript) do DOM real que permite computar as diferenças [diffing] entre o real e o virtual e aplicá-las [patch] no real, para ganho de performance na renderização
@@ -10,3 +12,64 @@ http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
 https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom?hl=pt-br
 http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/
 https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM
+
+
+import React, { Component } from 'react';
+
+export default class FormInput extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+//		this.setState({[props.name]: null});
+		this.argsToAvoid = ['containerClassName','value', 'onChange'];
+	}
+
+	alterarValor(campo, event) {
+//		this.setState({[this.props.name]: event.target.value});
+		this.state[this.props.name] = event.target.value;
+	}
+
+	gerarElementoCaptcha() {
+		let CTag = null;
+		fetch('/captcha', {accept: 'image/svg+xml'}).then(response => {
+			CTag = response.headers.get('CTag');
+			return response.text();
+		}).then(data => {
+			this.setState({
+				captchaElement: <span dangerouslySetInnerHTML={{__html: data}}/>,
+				inputHidden: <input type='hidden' name='CTag' value={CTag}/>
+			});
+		}).catch(err => {
+			this.setState({
+				captchaElement: <span>Falha na recuperação da captcha: {err}</span>,
+			});
+		});
+	}
+
+	componentWillMount() {
+		if (this.props.type.toLowerCase() === 'captcha') {
+			this.gerarElementoCaptcha();
+		}
+	}
+
+	render() {
+		let args = {};
+		let	className = this.props.containerClassName ?  {className: this.props.containerClassName} : {};
+		Object.keys(this.props).forEach(e => {
+			if (e.toLowerCase() === 'type' && this.props[e].toLowerCase() === 'captcha') {
+				args[e] = 'text';
+			} else if (this.argsToAvoid.indexOf(e) < 0) {
+				args[e] = this.props[e];
+			}
+		});
+
+		return (
+			<div {...className}>
+				{this.state.inputHidden}
+				<label htmlFor={this.props.id}>{this.props.label}:</label>
+				<input onChange={this.alterarValor.bind(this, this.props.name)} value={this.state[this.props.name]} {...args}/>
+				{this.state.captchaElement}
+			</div>
+		);
+	}
+}
