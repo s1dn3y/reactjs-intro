@@ -1,8 +1,9 @@
 - ReactJS
 https://braziljs.org/blog/react-do-basico-ao-avancado-parte-1/
+https://tableless.com.br/hello-world-com-react-do-rascunho-ate-o-primeiro-componente/
+https://www.polvo.com.br/blog/como-criar-um-aplicativo-com-reactjs
 
 - Virtual DOM
-    - Um modelo (JavaScript) do DOM real que permite computar as diferenças [diffing] entre o real e o virtual e aplicá-las [patch] no real, para ganho de performance na renderização
 https://github.com/Matt-Esch/virtual-dom
 https://www.codecademy.com/articles/react-virtual-dom
 https://pt.stackoverflow.com/questions/43169/qual-a-diferen%C3%A7a-entre-dom-e-virtual-dom
@@ -13,63 +14,5 @@ https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom
 http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/
 https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM
 
-
-import React, { Component } from 'react';
-
-export default class FormInput extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-//		this.setState({[props.name]: null});
-		this.argsToAvoid = ['containerClassName','value', 'onChange'];
-	}
-
-	alterarValor(campo, event) {
-//		this.setState({[this.props.name]: event.target.value});
-		this.state[this.props.name] = event.target.value;
-	}
-
-	gerarElementoCaptcha() {
-		let CTag = null;
-		fetch('/captcha', {accept: 'image/svg+xml'}).then(response => {
-			CTag = response.headers.get('CTag');
-			return response.text();
-		}).then(data => {
-			this.setState({
-				captchaElement: <span dangerouslySetInnerHTML={{__html: data}}/>,
-				inputHidden: <input type='hidden' name='CTag' value={CTag}/>
-			});
-		}).catch(err => {
-			this.setState({
-				captchaElement: <span>Falha na recuperação da captcha: {err}</span>,
-			});
-		});
-	}
-
-	componentWillMount() {
-		if (this.props.type.toLowerCase() === 'captcha') {
-			this.gerarElementoCaptcha();
-		}
-	}
-
-	render() {
-		let args = {};
-		let	className = this.props.containerClassName ?  {className: this.props.containerClassName} : {};
-		Object.keys(this.props).forEach(e => {
-			if (e.toLowerCase() === 'type' && this.props[e].toLowerCase() === 'captcha') {
-				args[e] = 'text';
-			} else if (this.argsToAvoid.indexOf(e) < 0) {
-				args[e] = this.props[e];
-			}
-		});
-
-		return (
-			<div {...className}>
-				{this.state.inputHidden}
-				<label htmlFor={this.props.id}>{this.props.label}:</label>
-				<input onChange={this.alterarValor.bind(this, this.props.name)} value={this.state[this.props.name]} {...args}/>
-				{this.state.captchaElement}
-			</div>
-		);
-	}
-}
+- Cheat Sheet
+https://reactcheatsheet.com/

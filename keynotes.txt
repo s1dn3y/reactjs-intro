@@ -1,0 +1,33 @@
+Introdução
+    - Apresentação do ReactJS
+    - É uma lib e não um framework
+        - Usar ReactJS com AngularJS ou Vue.JS?
+            . nada de outro mundo, já que ReactJS é uma lib e foca na só view 
+    - "V" de MVC
+    - Manipular o DOM é um DOOM!
+        - Virtual DOM 
+            . Um modelo do DOM real - é uma árvore de objetos JavaScript
+            . Permite computar as diferenças [diffing] entre o real e o virtual
+            . Permite aplicar [patch] somente as diferenças no DOM real
+            . Ganho de performance na renderização do DOM real
+    - Propósito: reutilização
+
+Exemplo 01 - Olá mundo!
+    - Instalação do ReactJS
+    - Olá mundo!
+
+Exemplo 02 - Preparação para o validador de cpf
+    - Código dentro do index.html (ainda)
+    - Problema
+        . não é reutilizável...
+        . muito verboso...
+
+Exemplo 03 - Iniciando a componentização do validador de cpf
+    - Código extraído para arquivo
+    - Transformado em componente
+    - this.props
+    - Problema
+        . muito verboso ainda...
+
+Exemplo 04 - JSX
+    - https://facebook.github.io/react/docs/react-without-jsx.html
