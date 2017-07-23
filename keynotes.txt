@@ -31,3 +31,8 @@ Exemplo 03 - Iniciando a componentização do validador de cpf
 
 Exemplo 04 - JSX
     - https://facebook.github.io/react/docs/react-without-jsx.html
+    - Bem menos verboso
+    - Favorece o  a  (*com ressalvas)
+    - Sinceramente/sem frescura: eh tranquilo para devs!!!
+    
+    
