@@ -2,8 +2,8 @@
 <head><title>Exemplo 02</title></head>
 <body>
     <div id="root"><!-- meu conteúdo será gerenciado pelo reactjs --></div>
-    <script src="js/vendor/react.js"></script>
-    <script src="js/vendor/react-dom.js"></script>
+    <script src="js/lib/react.js"></script>
+    <script src="js/lib/react-dom.js"></script>
     <script src="js/validadorDeCpf.js"></script>
     <script>
         var cpf = '';
@@ -18,7 +18,7 @@
                     value: 'Validar',
                     onClick: function() {
                         var ehValido = validarCPF(document.getElementById('cpf').value);
-                        alert(ehValido ? 'CPF válido!' : 'CPF inválido...');
+                        console.log(ehValido ? 'CPF válido!' : 'CPF inválido...');
                     }
                 }, null)
             ),
