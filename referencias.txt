@@ -14,5 +14,8 @@ https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom
 http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/
 https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM
 
+- WebStandards
+http://www.maujor.com/tutorial/o-que-sao-web-standards.php
+
 - Cheat Sheet
 https://reactcheatsheet.com/
