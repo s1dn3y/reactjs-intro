@@ -79,6 +79,16 @@ Rumo a Tóquio
 				. Ainda é muito verboso (muito boilerplate)
 				. Ainda não favorece o trabalho de UI
 
+JSX - Feio? Sim, mas nem tanto...
+	. É preprocessado e transformado em JS
+	- Exemplo 06
+		- Demonstra
+			- JSX
+				. Muito menos verboso
+		- Problemas
+			. Ainda não favorece o trabalho de UI
+			. Mistura código JS com "html"
+
 
 Exemplo 99 - JSX
 	- https://facebook.github.io/react/docs/react-without-jsx.html
