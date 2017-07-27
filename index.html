@@ -1,0 +1,428 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Introdução ao React.JS</title>
+		<meta name="author" content="Sidney Amaral">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/lib/reveal/reveal.css">
+		<link rel="stylesheet" href="css/lib/reveal/theme/black.css">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="css/lib/highlight/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'css/lib/reveal/print/pdf.css' : 'css/lib/reveal/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <section>
+                        <h4>React.JS</h4>
+                        <ul>
+                            <li class="fragment fade-up">Biblioteca (não um framework)</li>
+                            <li class="fragment fade-up">Lida apenas com a view</li>
+                            <li class="fragment fade-up">Foco em reutilização (componentização)</li>
+                            <li class="fragment fade-up">Site e informações básicas</li>
+                            <li class="fragment fade-up">Abordagem deste talk: elementar</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Exemplo 1</h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li>Baixar arquivos da React</li>
+                            <li>Como usar no projeto</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Virtual DOM e DOM</h4>
+                        <ul>
+                            <li class="fragment fade-up">Manipular o DOM é quase um DOOM!</li>
+                            <li class="fragment fade-up">vDOM: uma representação do DOM real</li>
+                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em></li>
+                            <li class="fragment fade-up">Promove rapidez na renderização do DOM</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Exemplo 2</p>
+
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li>Objeto React (elementos e componentes)</li>
+                            <li>Objeto ReactDOM (age sobre o DOM)</li>
+                        </ul>
+
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up">Lógica dentro do index.html</li>
+                            <li class="fragment fade-up">Cadê o componente??</li>
+                            <li class="fragment fade-up">Tem muito código!!</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h4>Componentização</h4>
+
+                        <p class="fragment fade-up">O propósito do React</p>
+                        <ul>
+                            <li class="fragment fade-up">Componentes ricos</li>
+                            <li class="fragment fade-up">Atributos e controle de estado</li>
+                        </ul>
+
+                        <p class="fragment fade-up"><em>class</em> e <em>for</em></p>
+                        <ul>
+                            <li class="fragment fade-up">Palavras reservadas em JS: vDOM é um objeto</li>
+                            <li class="fragment fade-up">Usar className e htmlFor</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p><em>style</em></p>
+                        <ul>
+                            <li class="fragment fade-up">Tem que ser um objeto e não uma string</li>
+                            <li class="fragment fade-up">Por que não uma string como no HTML?</li>
+                            <li class="fragment fade-up">Por performance e simplicidade!</li>
+                            <li class="fragment fade-up">Dispensa o <em>parsing</em> da string</li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <p>Exemplo 3</p>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up">Extrair código reutilizável para arquivo</li>
+                            <li class="fragment fade-up">Uso de propriedades: parametrização</li>
+                            <li class="fragment fade-up">Uso do htmlFor e do style</li>
+                        </ul>
+
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up">Ainda tem código no index.html</li>
+                            <li class="fragment fade-up">Ainda tem múito código (boilerplate)</li>
+                            <li class="fragment fade-up">Não favorece o trabalho de UI</li>
+                            <li class="fragment fade-up">Dependência do DOM</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4></h4>
+                        <p></p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Exemplo </h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h4></h4>
+                        <p></p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Exemplo </h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4></h4>
+                        <p></p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Exemplo </h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4></h4>
+                        <p></p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Exemplo </h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4></h4>
+                        <p></p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Exemplo </h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4></h4>
+                        <p></p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Exemplo </h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4></h4>
+                        <p></p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4>Exemplo </h4>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                        </ul>
+                    </section>
+                </section>
+                
+
+
+				<section>
+                    <h4>Slide 2</h4>
+                    <section>
+                        <pre>
+                            <code class="hljs" data-trim contenteditable>
+var f1 = function(name) {
+    return {
+        name: name,
+        getName: function() {return this.name;}
+    }
+};
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+			</div>
+		</div>
+		<script src="js/lib/head.min.js"></script>
+		<script src="js/lib/reveal/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'js/lib/classList.js', condition: function() { return !document.body.classList; } },
+//					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+//					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/lib/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/lib/zoom-js/zoom.js', async: true },
+					{ src: 'js/lib/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
