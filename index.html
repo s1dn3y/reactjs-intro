@@ -53,7 +53,8 @@
                             <li class="fragment fade-up">Manipular o DOM é quase um DOOM!</li>
                             <li class="fragment fade-up">vDOM: uma representação do DOM real</li>
                             <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em></li>
-                            <li class="fragment fade-up">Promove rapidez na renderização do DOM</li>
+                            <li class="fragment fade-up">Eventos sintéticos</em></li>
+                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
                         </ul>
                     </section>
 
@@ -163,6 +164,7 @@
                         <p>Exemplo 5</p>
                         <p>O que veremos?</p>
                         <ul>
+                            <li class="fragment fade-up">value VS defaultValue</li>
                             <li class="fragment fade-up">O uso de this.propTypes</li>
                             <li class="fragment fade-up">O uso de this.state</li>
                         </ul>
@@ -170,15 +172,53 @@
                         <ul>
                             <li class="fragment fade-up">Ainda tem muito código (boilerplate)</li>
                             <li class="fragment fade-up">Ainda não favorece o trabalho de UI</li>
+                            <li class="fragment fade-up">Sempre define um FORM (desde Ex. 2)</li>
                         </ul>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h4></h4>
+                        <h4>JSX - Feio, mas nen tanto...</h4>
                         <p></p>
                         <ul>
+                            <li class="fragment fade-up">É preprocessado e transformado em JS</li>
+                            <li class="fragment fade-up">Préprocessamento ocorre no deploy</li>
+                            <li class="fragment fade-up">Browser roda JS</li>
+                            <li class="fragment fade-up">Menos verboso que React.createClass</li>
+                            <li class="fragment fade-up">Favorece o design da UI (ressalvas)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Exemplo 6 - Olá Mundo (by JSX)</p>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up">Código JSX</li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up">Mistura código JS com "html"</li>
+                            <li class="fragment fade-up">Porém, frescura-free!!</li>
+                            <li class="fragment fade-up">Alguém percebeu um outro problema? (dev/prod)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Exemplo 7</p>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li class="fragment fade-up">JS dentro do JSX com {...}</li>
+                            <li class="fragment fade-up">Eventos</li>
+                            <li class="fragment fade-up">onChange (simplicidade no tratamento de digitação: sem depender de keyUp() etc.</li>
+                            <li class="fragment fade-up">TEXTAREA e SELECT (value e default)</li>
+                        </ul>
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
@@ -187,11 +227,12 @@
                         </ul>
                     </section>
                     
+
                     <section>
-                        <p>Exemplo </p>
+                        <p>Exemplo 8 - validador de cpf (versão JSX)</p>
                         <p>O que veremos?</p>
                         <ul>
-                            <li class="fragment fade-up"></li>
+                            <li class="fragment fade-up">Favorecer reutilização (tirar o FORM)</li>
                             <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
@@ -199,8 +240,6 @@
                         </ul>
                         <p class="fragment fade-up">Que problemas nós vimos?</p>
                         <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
                             <li class="fragment fade-up"></li>
