@@ -17,5 +17,8 @@ https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM
 - WebStandards
 http://www.maujor.com/tutorial/o-que-sao-web-standards.php
 
+- Hello World com React desde o Rascunho (exemplo com JS5, Webpack e JSX do zero)
+http://diegoeis.com/hello-world-com-react-desde-o-rascunho.html
+
 - Cheat Sheet
 https://reactcheatsheet.com/
