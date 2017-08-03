@@ -21,4 +21,7 @@ http://www.maujor.com/tutorial/o-que-sao-web-standards.php
 http://diegoeis.com/hello-world-com-react-desde-o-rascunho.html
 
 - Cheat Sheet
-https://reactcheatsheet.com/
+https://reactcheatsheet.com
+
+- Flux
+https://tableless.com.br/flux-entenda-como-funciona-arquitetura-flux-com-react

@@ -1,4 +1,12 @@
-section p {
+.reveal section p {
     font-weight: bold !important;
     font-size: 1.1em !important;
+}
+
+.reveal section img {
+    background:none;
+    border:none;
+    box-shadow:none;
+    height: 480px;
+    width: 640px;
 }

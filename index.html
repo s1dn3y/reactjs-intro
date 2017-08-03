@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="ptbr">
 	<head>
 		<meta charset="utf-8">
 		<title>Introdução ao React.JS</title>
@@ -24,37 +24,100 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
                 <section>
-                    <section>
-                        <h4>React.JS</h4>
+
+                    <h4>React.JS</h4>
+
+                    <section class="center">
                         <ul>
-                            <li class="fragment fade-up">Biblioteca (não um framework)</li>
-                            <li class="fragment fade-up">Lida apenas com a view</li>
-                            <li class="fragment fade-up">Foco em reutilização (componentização)</li>
-                            <li class="fragment fade-up">Site e informações básicas</li>
-                            <li class="fragment fade-up">Abordagem deste talk: elementar</li>
+                            <li class="fragment fade-up">Biblioteca em JavaScript para construção de UI</li>
+                            <li class="fragment fade-up">Coesa - única responsabilidade é cuidar da UI</li>
+                            <li class="fragment fade-up">Amadurecida, versão atual v15.6.1, primeiro<br/>release feito em 29/Mai/2013</li>
+                            <li class="fragment fade-up">Permite criar componentes visuais ricos</li>
+                            <li class="fragment fade-up">Documentação, tutoriais, exemplos, vídeos<br/>no site <em>www.reactjs.com</em></li>
                         </ul>
                     </section>
 
                     <section>
-                        <h4>Exemplo 1</h4>
-                        <p>O que veremos?</p>
+                        <p>Tem projetos grandes usando?</p>
+
                         <ul>
+                            <li class="fragment fade-up">Netflix, Facebook, Instagram</li>
+                            <li class="fragment fade-up">WhatsApp Web, Dropbox, Atlassian</li>
+                            <li class="fragment fade-up">Uber, Yahoo! Mail, KhanAcademy</li>
+                            <li class="fragment fade-up">Amazon AWS e outros</li>
+                        </ul>
+                    </section>
+
+                    <section class="center">
+                        <p>Qual será a abordagem deste talk?</p>
+                        <p class="fragment fade-up red">Introdutória e elementar...</p>
+                    </section>
+
+                    <section class="center">
+                        <p>Agenda</p>
+                        <ul>
+                            <li class="fragment fade-up">Instalação e uso</li>
+                            <li class="fragment fade-up">Virtual DOM</li>
+                            <li class="fragment fade-up">Rumo ao componente</li>
+                            <li class="fragment fade-up">JSX</li>
+                        </ul>
+                    </section>
+
+                </section>
+<!--
+Agenda:
+
+instalação e uso
+    baixar e referenciar no html
+    exemplo 1
+    Classes React e ReactDOM
+virtual DOM
+rumo ao componente
+    propriedades (argumentos de inicialização)
+        this.props
+        this.propTypes
+    estado
+        value VS defaultValue
+        this.state
+    eventos sitéticos
+        vantagem
+    ciclo de vida
+        componentWillMount
+        componentDidMount
+        componentWillUpdate
+        componentDidUpdate
+        shouldComponentUpdate
+JSX
+-->
+
+                <section>
+
+                    <h4>Instalação e uso</h4>
+
+                    <section>
+                        <p>Entrar na página do React</p>
+                        <img src="react-homepage.png"/>
+                    </section>
+
+                    <section>
+                        <p>Clicar no link para o repositório</p>
+                        <img src="react-homepage-download-link.png"/>
+                    </section>
+                    
+                    <section>
+                        <p>Salvar <em>react.js</em> e <em>react-dom.js no teu projeto</em></p>
+                        <img src="react-download-page.png"/>
+                    </section>
+
+                    <section>
+                        <p>Exemplo 1</p>
+                        <p class="fragment fade-up">O que veremos?</p>
+                        <ul class="fragment fade-up">
                             <li>Baixar arquivos da React</li>
                             <li>Como usar no projeto</li>
-                        </ul>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h4>Virtual DOM e DOM</h4>
-                        <ul>
-                            <li class="fragment fade-up">Manipular o DOM é quase um DOOM!</li>
-                            <li class="fragment fade-up">vDOM: uma representação do DOM real</li>
-                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em></li>
-                            <li class="fragment fade-up">Eventos sintéticos</em></li>
-                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
+                            <li>Olá Mundo!</li>
                         </ul>
                     </section>
 
@@ -64,7 +127,7 @@
                         <p>O que veremos?</p>
                         <ul>
                             <li>Objeto React (elementos e componentes)</li>
-                            <li>Objeto ReactDOM (age sobre o DOM)</li>
+                            <li>Objeto ReactDOM (interage com o DOM)</li>
                         </ul>
 
                         <p class="fragment fade-up">Que problemas nós vimos?</p>
@@ -74,19 +137,50 @@
                             <li class="fragment fade-up">Tem muito código!!</li>
                         </ul>
                     </section>
+
                 </section>
 
                 <section>
-                    <section>
-                        <h4>Componentização</h4>
 
+                    <h4>Virtual DOM</h4>
+
+                    <section>
+                        <p class="fragment fade-up">Propósito e principais características</p>
+                        <ul>
+                            <li class="fragment fade-up">Manipular o DOM é quase um DOOM!</li>
+                            <li class="fragment fade-up">É um objeto JavaScript contendo uma<br/> representação do DOM real</li>
+                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em>: identifica as mudanças realizadas e as aplica no DOM</li>
+                            <li class="fragment fade-up">Utiliza eventos sintéticos</em></li>
+                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p class="fragment fade-up">O propósito do React</p>
+                        <ul>
+                            <li class="fragment fade-up">Manipular o DOM é quase um DOOM!</li>
+                            <li class="fragment fade-up">vDOM: uma representação do DOM real</li>
+                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em></li>
+                            <li class="fragment fade-up">Utiliza eventos sintéticos</em></li>
+                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
+                        </ul>
+                    </section>
+
+                </section>
+                
+                <section>
+                    <h4>Componentização</h4>
+
+                    <section>
                         <p class="fragment fade-up">O propósito do React</p>
                         <ul>
                             <li class="fragment fade-up">Componentes ricos</li>
                             <li class="fragment fade-up">Atributos e controle de estado</li>
                         </ul>
+                    </section>
 
-                        <p class="fragment fade-up">Propriedades <em>class</em> e <em>for</em></p>
+                    <section>
+                        <p>Propriedades <em>class</em> e <em>for</em></p>
                         <ul>
                             <li class="fragment fade-up">Palavras reservadas em JS: vDOM é um objeto</li>
                             <li class="fragment fade-up">Usar className e htmlFor</li>
@@ -94,7 +188,7 @@
                     </section>
 
                     <section>
-                        <p><em>Propriedade style</em></p>
+                        <p>Propriedade <em>style</em></p>
                         <ul>
                             <li class="fragment fade-up">Tem que ser um objeto e não uma string</li>
                             <li class="fragment fade-up">Por que não uma string como no HTML?</li>
@@ -108,18 +202,20 @@
                         <p>O que veremos?</p>
                         <ul>
                             <li class="fragment fade-up">Extrair código reutilizável para arquivo</li>
-                            <li class="fragment fade-up">Uso de propriedades: parametrização</li>
-                            <li class="fragment fade-up">Uso do htmlFor e do style</li>
-                            <li class="fragment fade-up">Uso de className em vez de style (css inline nunca!)</li>
+                            <li class="fragment fade-up">Uso de propriedades (argumentos)</li>
+                            <li class="fragment fade-up">Uso de <em>htmlFor</em> e <em>style</em></li>
+                            <li class="fragment fade-up">Uso de <em>className</em> (css inline nunca!)</li>
                         </ul>
-
-                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                    </section>
+                    
+                    <section>
+                        <p>Que problemas nós vimos?</p>
                         <ul>
                             <li class="fragment fade-up">Ainda tem código no index.html</li>
                             <li class="fragment fade-up">Ainda com muito código (boilerplate)</li>
                             <li class="fragment fade-up">Não favorece o trabalho de UI</li>
                             <li class="fragment fade-up">Fortemente acoplado ao DOM</li>
-                            <li class="fragment fade-up">Não é coeso: renderiza sempre em FORMs diferentes</li>
+                            <li class="fragment fade-up">Não é coeso: renderiza sempre<br/>em FORMs diferentes</li>
                         </ul>
                     </section>
 
