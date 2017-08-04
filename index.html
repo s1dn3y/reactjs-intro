@@ -60,8 +60,10 @@
                         <ul>
                             <li class="fragment fade-up">Instalação e uso</li>
                             <li class="fragment fade-up">Virtual DOM</li>
-                            <li class="fragment fade-up">Rumo ao componente</li>
+                            <li class="fragment fade-up">Componente</li>
                             <li class="fragment fade-up">JSX</li>
+                            <li class="fragment fade-up">Webpack</li>
+                            <li class="fragment fade-up">Agradecimentos</li>
                         </ul>
                     </section>
 
@@ -74,7 +76,7 @@ instalação e uso
     exemplo 1
     Classes React e ReactDOM
 virtual DOM
-rumo ao componente
+Componente
     propriedades (argumentos de inicialização)
         this.props
         this.propTypes
@@ -90,6 +92,13 @@ rumo ao componente
         componentDidUpdate
         shouldComponentUpdate
 JSX
+Webpack
+    Node.js como base para ferramentas de apoio (para várias plataformas)
+        Talvez você até já usa e não saiba
+        npm
+        instalação do Webpack
+    Exemplo rodando sobre Webpack
+Agradecimentos
 -->
 
                 <section>
@@ -138,16 +147,10 @@ JSX
                         </ul>
                     </section>
 
-                </section>
-
-                <section>
-
-                    <h4>Virtual DOM</h4>
-
                     <section>
-                        <p class="fragment fade-up">Propósito e principais características</p>
+                        <p>Virtual DOM</p>
+
                         <ul>
-                            <li class="fragment fade-up">Manipular o DOM é quase um DOOM!</li>
                             <li class="fragment fade-up">É um objeto JavaScript contendo uma<br/> representação do DOM real</li>
                             <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em>: identifica as mudanças realizadas e as aplica no DOM</li>
                             <li class="fragment fade-up">Utiliza eventos sintéticos</em></li>
@@ -156,20 +159,24 @@ JSX
                     </section>
 
                     <section>
-                        <p class="fragment fade-up">O propósito do React</p>
+                        <p>Exemplo 3</p>
+
+                        <p>O que veremos?</p>
                         <ul>
-                            <li class="fragment fade-up">Manipular o DOM é quase um DOOM!</li>
-                            <li class="fragment fade-up">vDOM: uma representação do DOM real</li>
-                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em></li>
-                            <li class="fragment fade-up">Utiliza eventos sintéticos</em></li>
-                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
+                            <li>O custo de manipular o DOM diretamente</li>
+                            <li>Como o uso do vDOM se sai?</li>
+                        </ul>
+
+                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                        <ul>
+                            <li class="fragment fade-up">Alterar o DOM = DOOM</li>
                         </ul>
                     </section>
 
                 </section>
                 
                 <section>
-                    <h4>Componentização</h4>
+                    <h4>Componente</h4>
 
                     <section>
                         <p class="fragment fade-up">O propósito do React</p>

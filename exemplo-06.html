@@ -1,11 +1,20 @@
 <html>
-<head><title>Exemplo </title></head>
+<head><title>Exemplo 6</title></head>
 <body>
     <div id="root"><!-- meu conteúdo será gerenciado pelo reactjs --></div>
+    <div id="outraDiv"><!-- meu conteúdo também !! --></div>
     <script src="js/lib/react.js"></script>
     <script src="js/lib/react-dom.js"></script>
-    <script src="js/lib/babel.js"></script>
-    <script src="js/06-componenteCampoCpf.js" type="text/jsx"></script>
-    <script src="js/06-app.js" type="text/jsx"></script>
+    <script src="js/validadorDeCpf.js"></script>
+    <script src="js/06-componenteCampoCpf.js"></script>
+    <script>
+        var campoCpf = React.createElement(ComponenteCampoCpf, {id:'idCampoCpf'});
+        
+        ReactDOM.render(
+            campoCpf,
+            document.getElementById('root')
+        );
+
+    </script>
 </body>
 </html>
