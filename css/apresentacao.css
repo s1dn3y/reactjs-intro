@@ -10,3 +10,29 @@
     height: 480px;
     width: 640px;
 }
+
+.reveal pre code {
+    font-size: 0.6em !important;
+}
+
+
+
+
+/* Reveal.js plugin */
+
+code.line-numbers {
+  counter-reset: line_numbers;
+}
+
+code span.line-number {
+  counter-increment: line_numbers;
+}
+
+code span.line-number:before {
+  content: counter(line_numbers, decimal-leading-zero);
+  color: gray;
+}
+
+code span.highlight-line:before {
+  color: yellow;
+}

@@ -18,25 +18,5 @@ var ComponenteCampoCpf = React.createClass({
 				}, null)
 			)
 		);
-	},
-
-	componentWillMount: function() {
-		console.log('componentWillMount');
-	},
-
-	componentDidMount: function() {
-		console.log('componentDidMount');
-	},
-
-	componentWillUpdate: function() {
-		console.log('componentWillUpdate');
-	},
-
-	componentDidUpdate: function() {
-		console.log('componentDidUpdate');
-	},
-
-	shouldComponentUpdate: function() {
-		console.log('shouldComponentUpdate');
 	}
 });

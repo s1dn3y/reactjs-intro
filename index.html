@@ -33,9 +33,9 @@
                         <ul>
                             <li class="fragment fade-up">Biblioteca em JavaScript para construção de UI</li>
                             <li class="fragment fade-up">Coesa - única responsabilidade é cuidar da UI</li>
-                            <li class="fragment fade-up">Amadurecida, versão atual v15.6.1, primeiro<br/>release feito em 29/Mai/2013</li>
+                            <li class="fragment fade-up">Amadurecida: versão atual v15.6.1, primeiro<br/>release feito em 29/Mai/2013</li>
                             <li class="fragment fade-up">Permite criar componentes visuais ricos</li>
-                            <li class="fragment fade-up">Documentação, tutoriais, exemplos, vídeos<br/>no site <em>www.reactjs.com</em></li>
+                            <li class="fragment fade-up">Farta documentação, tutoriais, exemplos e vídeos<br/>no site <em>www.reactjs.com</em></li>
                         </ul>
                     </section>
 
@@ -48,6 +48,34 @@
                             <li class="fragment fade-up">Uber, Yahoo! Mail, KhanAcademy</li>
                             <li class="fragment fade-up">Amazon AWS e outros</li>
                         </ul>
+
+                        <p class="fragment fade-up">Tá bom pra você?</p>
+                    </section>
+
+                    <section>
+
+                        <p>Características Chave</p>
+                        <p>Virtual DOM</p>
+                        <ul>
+                            <li class="fragment fade-up">Um modelo (objeto) que representa o DOM real</li>
+                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em>: identifica as<br/> mudanças realizadas e as aplica no DOM</li>
+                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <p>Características Chave</p>
+                        <p>Eventos sintéticos</p>
+                        <ul>
+                            <li class="fragment fade-up">Encapsulam os eventos dos navegadores</li>
+                            <li class="fragment fade-up">Dispensa o uso de código de verificação para<br/> contornar diferenças entre os navegadores</li>
+                            <li class="fragment fade-up"><em>addEventListener</em> ou <em>attachEvent</em> ?</li>
+                            <li class="fragment fade-up"><em>event</em> ou <em>window.event</em> ?</li>
+                            <li class="fragment fade-up"><em>event.target</em> ou <em>event.srcElement</em> ?</li>
+                        </ul>
+
                     </section>
 
                     <section class="center">
@@ -60,7 +88,7 @@
                         <ul>
                             <li class="fragment fade-up">Instalação e uso</li>
                             <li class="fragment fade-up">Virtual DOM</li>
-                            <li class="fragment fade-up">Componente</li>
+                            <li class="fragment fade-up">Componentes reutilizáveis</li>
                             <li class="fragment fade-up">JSX</li>
                             <li class="fragment fade-up">Webpack</li>
                             <li class="fragment fade-up">Agradecimentos</li>
@@ -122,99 +150,102 @@ Agradecimentos
 
                     <section>
                         <p>Exemplo 1</p>
-                        <p class="fragment fade-up">O que veremos?</p>
-                        <ul class="fragment fade-up">
-                            <li>Baixar arquivos da React</li>
-                            <li>Como usar no projeto</li>
-                            <li>Olá Mundo!</li>
+                        <p>O que veremos?</p>
+                        <ul>
+                            <li>Como usar o React no projeto</li>
+                            <li>O bom e velho Olá Mundo!</li>
                         </ul>
                     </section>
 
                     <section>
+                        <p>Olá Mundo!</p>
+                        <pre><code class="html line-numbers" data-highlight-lines="3,4,6-8" data-trim>    ...
+    &lt;div id=&quot;root&quot;&gt;&lt;!-- meu conte&uacute;do ser&aacute; gerenciado pelo reactjs --&gt;&lt;/div&gt;
+    &lt;script src=&quot;js/lib/react.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/lib/react-dom.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        ReactDOM.render(
+            React.createElement('h1', null, &quot;Ol&aacute; Mundo!&quot;),
+            document.getElementById('root')
+        );
+    &lt;/script&gt;
+    ...</code></pre>
+                    </section>
+
+                    <section>
+
                         <p>Exemplo 2</p>
 
                         <p>O que veremos?</p>
                         <ul>
-                            <li>Objeto React (elementos e componentes)</li>
-                            <li>Objeto ReactDOM (interage com o DOM)</li>
+                            <li>O propósito das classes <em>React</em> e <em>ReactDOM</em></li>
+                            <li>Indo além do Olá Mundo: validador de CPFs</li>
                         </ul>
 
-                        <p class="fragment fade-up">Que problemas nós vimos?</p>
+                    </section>
+
+                    <section>
+
+                        <p>Validador de CPF</p>
+                        <pre><code class="html line-numbers" data-highlight-lines="4-6,10,19" data-trim>    ...
+    &lt;script src=&quot;js/validadorDeCpf.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        ReactDOM.render(
+            React.createElement('form', null,
+                React.createElement('input', {
+                    id: 'cpf',
+                    type: 'text'
+                }, null),
+                React.createElement('input', {
+                    type: 'button',
+                    value: 'Validar',
+                    onClick: function() {
+                        var ehValido = validarCPF(document.getElementById('cpf').value);
+                        console.log(ehValido ? 'CPF v&aacute;lido!' : 'CPF inv&aacute;lido...');
+                    }
+                }, null)
+            ),
+            document.getElementById('root')
+        );
+    &lt;/script&gt;
+    ...</code></pre>
+
+                    </section>
+
+                    <section>
+
+                        <p>Exemplo 2</p>
+                        <p>Que problemas nós vimos?</p>
                         <ul>
                             <li class="fragment fade-up">Lógica dentro do index.html</li>
                             <li class="fragment fade-up">Cadê a reutilização??</li>
                             <li class="fragment fade-up">Tem muito código!!</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <p>Virtual DOM</p>
-
-                        <ul>
-                            <li class="fragment fade-up">É um objeto JavaScript contendo uma<br/> representação do DOM real</li>
-                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em>: identifica as mudanças realizadas e as aplica no DOM</li>
-                            <li class="fragment fade-up">Utiliza eventos sintéticos</em></li>
-                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <p>Exemplo 3</p>
-
-                        <p>O que veremos?</p>
-                        <ul>
-                            <li>O custo de manipular o DOM diretamente</li>
-                            <li>Como o uso do vDOM se sai?</li>
+                            <li class="fragment fade-up">Fortemente acoplado ao DOM</li>
                         </ul>
 
-                        <p class="fragment fade-up">Que problemas nós vimos?</p>
-                        <ul>
-                            <li class="fragment fade-up">Alterar o DOM = DOOM</li>
-                        </ul>
                     </section>
 
                 </section>
                 
                 <section>
-                    <h4>Componente</h4>
+                    <h4>Componentes</h4>
 
                     <section>
-                        <p class="fragment fade-up">O propósito do React</p>
-                        <ul>
-                            <li class="fragment fade-up">Componentes ricos</li>
-                            <li class="fragment fade-up">Atributos e controle de estado</li>
-                        </ul>
+                        <p>A base para contrução de UIs</p>
+                        <p>React permite criar componentes ricos,<br/>
+                        parametrizáveis, reutilizáveis e com<br/>
+                        controle de estado</p>
                     </section>
 
-                    <section>
-                        <p>Propriedades <em>class</em> e <em>for</em></p>
-                        <ul>
-                            <li class="fragment fade-up">Palavras reservadas em JS: vDOM é um objeto</li>
-                            <li class="fragment fade-up">Usar className e htmlFor</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <p>Propriedade <em>style</em></p>
-                        <ul>
-                            <li class="fragment fade-up">Tem que ser um objeto e não uma string</li>
-                            <li class="fragment fade-up">Por que não uma string como no HTML?</li>
-                            <li class="fragment fade-up">Por performance e simplicidade!</li>
-                            <li class="fragment fade-up">Dispensa o <em>parsing</em> da string</li>
-                        </ul>
-                    </section>
-                    
                     <section>
                         <p>Exemplo 3</p>
                         <p>O que veremos?</p>
                         <ul>
+                            <li class="fragment fade-up">Validador de CPFs reutilizável</li>
                             <li class="fragment fade-up">Extrair código reutilizável para arquivo</li>
-                            <li class="fragment fade-up">Uso de propriedades (argumentos)</li>
-                            <li class="fragment fade-up">Uso de <em>htmlFor</em> e <em>style</em></li>
-                            <li class="fragment fade-up">Uso de <em>className</em> (css inline nunca!)</li>
                         </ul>
                     </section>
-                    
+
                     <section>
                         <p>Que problemas nós vimos?</p>
                         <ul>
@@ -226,6 +257,35 @@ Agradecimentos
                         </ul>
                     </section>
 
+                    <section>
+                        <p>Propriedades do componente</p> <!-- ESTOU AQUI!!! -->
+                        <ul>
+                            <li class="fragment fade-up">São argumentos de parametrização</li>
+                            <li class="fragment fade-up">Semelhantes a argumentos passados a um construtor</li>
+                        <ul>
+                    </section>
+
+<section>
+    <p>Propriedades <em>class</em> e <em>for</em></p>
+    <ul>
+        <li class="fragment fade-up">Uso de propriedades (argumentos)</li>
+        <li class="fragment fade-up"><em>htmlFor</em> e <em>style</em></li>
+        <li class="fragment fade-up"><em>className</em> (css inline nunca!)</li>
+        <li class="fragment fade-up">Palavras reservadas em JS: vDOM é um objeto</li>
+        <li class="fragment fade-up">Usar className e htmlFor</li>
+    </ul>
+</section>
+
+<section>
+    <p>Propriedade <em>style</em></p>
+    <ul>
+        <li class="fragment fade-up">Tem que ser um objeto e não uma string</li>
+        <li class="fragment fade-up">Por que não uma string como no HTML?</li>
+        <li class="fragment fade-up">Por performance e simplicidade!</li>
+        <li class="fragment fade-up">Dispensa o <em>parsing</em> da string</li>
+    </ul>
+</section>
+                    
                     <section>
                         <p>Controlando o estado dos componentes</p>
                         <p>...</p>
@@ -558,25 +618,26 @@ var f1 = function(name) {
                 </section>
 			</div>
 		</div>
-		<script src="js/lib/head.min.js"></script>
+		<script src="js/lib/reveal/head.min.js"></script>
 		<script src="js/lib/reveal/reveal.js"></script>
 		<script>
 			Reveal.initialize({
 				controls: true,
 				progress: true,
 				history: true,
-				center: false,
+                center: false,
+                viewDistance: 2,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
 				dependencies: [
-					{ src: 'js/lib/classList.js', condition: function() { return !document.body.classList; } },
-//					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-//					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'js/lib/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'js/lib/zoom-js/zoom.js', async: true },
-					{ src: 'js/lib/notes/notes.js', async: true }
+					{ src: 'js/lib/reveal/plugins/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/lib/reveal/plugins/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/lib/reveal/plugins/zoom.js', async: true },
+//                    { src: 'js/lib/reveal/plugins/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
+                    { src: 'js/lib/reveal/plugins/js/highlightfragment.js', async: true },
+                    {src: 'js/lib/reveal/plugins/line-numbers.js'},
+					{ src: 'js/lib/reveal/plugins/notes.js', async: true }
 				]
 			});
 		</script>
