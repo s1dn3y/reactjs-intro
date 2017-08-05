@@ -1,0 +1,29 @@
+<html>
+<head><title>Exemplo </title></head>
+<body>
+	<div id="root"></div>
+	<script src="js/lib/react/react.js"></script>
+	<script src="js/lib/react/react-dom.js"></script>
+	<script src="js/lib/jquery/jquery.js"></script>
+	<script src="js/lib/jquery/plugins/jquery.mask.js"></script>
+	<script src="js/98-masked-input.js"></script>
+	<script>
+		ReactDOM.render(
+			React.createElement('div', null,
+				React.createElement('span', null, 'MM/YYYY '),
+				React.createElement(MaskedInput, {id: 'campoMesAno', defaultValue: '121998', placeHolder:'mm/aaaa', mask:'00/0000'}, null),
+				React.createElement('br', null, null),
+
+				React.createElement('span', null, 'CEP '),
+				React.createElement(MaskedInput, {id: 'campoCep', isReverse: true, mask:'AAA 00000-000'}, null),
+				React.createElement('br', null, null),
+
+				React.createElement('span', null, 'Moeda '),
+				React.createElement(MaskedInput, {id: 'campoMoeda', isReverse: true, mask:'##0,00'}, null),
+				React.createElement('br', null, null)
+			),
+			document.getElementById("root")
+		);
+	</script>
+</body>
+</html>
