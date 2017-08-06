@@ -19,7 +19,7 @@ var MaskedInput = React.createClass({
 	},
 
 	componentDidMount: function() {
-		var $input = $(ReactDOM.findDOMNode(this.refs[this.props.id]));
+		var $input = $(this.refs.input);
 		var isReverse = false || this.props.isReverse;
 		var placeHolder = '' || this.props.placeHolder;
 
@@ -32,7 +32,7 @@ var MaskedInput = React.createClass({
 	render: function() {
 		return React.createElement('input', {
 			id: this.props.id,
-			ref: this.props.id,
+			ref: 'input',
 			type: 'text',
 			defaultValue: this.props.defaultValue,
 			onChange: this.handleChange,
