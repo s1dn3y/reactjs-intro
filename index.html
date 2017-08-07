@@ -31,10 +31,9 @@
 
                     <section class="center">
                         <ul>
-                            <li class="fragment fade-up">Biblioteca em JavaScript para construção de UI</li>
+                            <li class="fragment fade-up">"Biblioteca em JavaScript para construção de UI"</li>
                             <li class="fragment fade-up">Coesa - única responsabilidade é cuidar da UI</li>
                             <li class="fragment fade-up">Amadurecida: versão atual v15.6.1, primeiro<br/>release feito em 29/Mai/2013</li>
-                            <li class="fragment fade-up">Permite criar componentes visuais ricos</li>
                             <li class="fragment fade-up">Farta documentação, tutoriais, exemplos e vídeos<br/>no site <em>www.reactjs.com</em></li>
                         </ul>
                     </section>
@@ -53,29 +52,53 @@
                     </section>
 
                     <section>
-
-                        <p>Características Chave</p>
-                        <p>Virtual DOM</p>
-                        <ul>
-                            <li class="fragment fade-up">Um modelo (objeto) que representa o DOM real</li>
-                            <li class="fragment fade-up">Faz <em>diffing</em> e <em>patching</em>: identifica as<br/> mudanças realizadas e as aplica no DOM</li>
-                            <li class="fragment fade-up">Rapidez na renderização do DOM</li>
-                        </ul>
-
+                        <p>Ah! Biblioteca para construção de UI???</p>
                     </section>
 
                     <section>
+                        <p>Eu vou ter isso?</p>
+						<p><img src='img/apresentacao/best-UI-1.jpg'></img></p>
+					</section>
 
-                        <p>Características Chave</p>
-                        <p>Eventos sintéticos</p>
+                    <section>
+                        <p>Ou isso????</p>
+						<p><img src='img/apresentacao/best-UI-2.png'></img></p>
+					</section>
+
+                    <section>
+						<p>React permite criar componentes visuais ricos, mas a resposta depende de ...</p>
                         <ul>
-                            <li class="fragment fade-up">Encapsulam os eventos dos navegadores</li>
-                            <li class="fragment fade-up">Dispensa o uso de código de verificação para<br/> contornar diferenças entre os navegadores</li>
-                            <li class="fragment fade-up"><em>addEventListener</em> ou <em>attachEvent</em> ?</li>
-                            <li class="fragment fade-up"><em>event</em> ou <em>window.event</em> ?</li>
-                            <li class="fragment fade-up"><em>event.target</em> ou <em>event.srcElement</em> ?</li>
+                            <li>Requisitos</li>
+                            <li>Usuário</li>
+                            <li>Custo</li>
+                            <li>Criatividade</li>
                         </ul>
+					</section>
+					
+                    <section>
+						<p>E toda grande UI começa com pequenas partes</p>
+						<img src='img/apresentacao/combo-box-UI.png'></img>
+                    </section>
+					
+                    <section>
+                        <p>Suporta Single Page Application</p>
+						<img src='img/apresentacao/spa-vs-traditional.png'></img>
+                    </section>
 
+                    <section>
+						<p>Oferece performance com Virtual DOM</p>
+						<img src='img/apresentacao/virtual-dom-update.png'></img>
+                    </section>
+
+                    <section>
+                        <p>E normalização entre browsers através dos Synthetic Events</p>
+                        <ul>
+                            <li class="fragment fade-up">Encapsula os eventos dos navegadores</li>
+                            <li class="fragment fade-up">Dispensa o uso de código de verificação para<br/> contornar diferenças entre os navegadores</li>
+                            <li class="fragment fade-up"><em>addEventListener</em> ou <em>attachEvent</em> ??</li>
+                            <li class="fragment fade-up"><em>event</em> ou <em>window.event</em> ??</li>
+                            <li class="fragment fade-up"><em>event.target</em> ou <em>event.srcElement</em> ??</li>
+                        </ul>
                     </section>
 
                     <section class="center">
@@ -86,10 +109,9 @@
                     <section class="center">
                         <p>Agenda</p>
                         <ul>
-                            <li class="fragment fade-up">Instalação e uso</li>
-                            <li class="fragment fade-up">Virtual DOM</li>
-                            <li class="fragment fade-up">Componentes reutilizáveis</li>
-                            <li class="fragment fade-up">JSX</li>
+                            <li class="fragment fade-up">Instalação</li>
+                            <li class="fragment fade-up">Componentes</li>
+                            <li class="fragment fade-up">JSX, JS6 e JS7</li>
                             <li class="fragment fade-up">Webpack</li>
                             <li class="fragment fade-up">Agradecimentos</li>
                         </ul>
@@ -135,17 +157,17 @@ Agradecimentos
 
                     <section>
                         <p>Entrar na página do React</p>
-                        <img src="react-homepage.png"/>
+                        <img src="img/apresentacao/react-homepage.png"/>
                     </section>
 
                     <section>
                         <p>Clicar no link para o repositório</p>
-                        <img src="react-homepage-download-link.png"/>
+                        <img src="img/apresentacao/react-homepage-download-link.png"/>
                     </section>
                     
                     <section>
                         <p>Salvar <em>react.js</em> e <em>react-dom.js no teu projeto</em></p>
-                        <img src="react-download-page.png"/>
+                        <img src="img/apresentacao/react-download-page.png"/>
                     </section>
 
                     <section>
@@ -625,15 +647,16 @@ var f1 = function(name) {
 				controls: true,
 				progress: true,
 				history: true,
-                center: false,
-                viewDistance: 2,
+				center: false,
+				minScale: 0.2,
+//                viewDistance: 2,
 
 				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
 				dependencies: [
 					{ src: 'js/lib/reveal/plugins/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'js/lib/reveal/plugins/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'js/lib/reveal/plugins/zoom.js', async: true },
+//					{ src: 'js/lib/reveal/plugins/zoom.js', async: true },
 //                    { src: 'js/lib/reveal/plugins/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
                     { src: 'js/lib/reveal/plugins/js/highlightfragment.js', async: true },
                     {src: 'js/lib/reveal/plugins/line-numbers.js'},
