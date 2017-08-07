@@ -1,28 +1,56 @@
-<html>
-<head><title>Exemplo 02</title></head>
+<html lang="ptbr">
+<head>
+	<meta charset="utf-8">
+	<title>Exemplo 02</title>
+</head>
 <body>
-    <div id="root"><!-- meu conteúdo será gerenciado pelo reactjs --></div>
+    <div id="root"></div>
     <script src="js/lib/react/react.js"></script>
     <script src="js/lib/react/react-dom.js"></script>
-    <script src="js/validador-de-cpf.js"></script>
     <script>
+		var estados = {
+			'AC': 'Acre',
+			'AL': 'Alagoas',
+			'AM': 'Amazonas',
+			'AP': 'Amapá',
+			'BA': 'Bahia',
+			'CE': 'Ceará',
+			'DF': 'Distrito Federal',
+			'ES': 'Espírito Santo',
+			'GO': 'Goiás',
+			'MA': 'Maranhão',
+			'MT': 'Mato Grosso',
+			'MS': 'Mato Grosso do Sul',
+			'MG': 'Minas Gerais',
+			'PA': 'Pará',
+			'PB': 'Paraíba',
+			'PR': 'Paraná',
+			'PE': 'Pernambuco',
+			'PI': 'Piauí',
+			'RJ': 'Rio de Janeiro',
+			'RN': 'Rio Grande do Norte',
+			'RO': 'Rondônia',
+			'RS': 'Rio Grande do Sul',
+			'RR': 'Roraima',
+			'SC': 'Santa Catarina',
+			'SE': 'Sergipe',
+			'SP': 'São Paulo',
+			'TO': 'Tocantins',
+		};
         ReactDOM.render(
-            React.createElement('form', null,
-                React.createElement('input', {
-                    id: 'cpf',
-                    type: 'text'
-                }, null),
-                React.createElement('input', {
-                    type: 'button',
-                    value: 'Validar',
-                    onClick: function() {
-                        var ehValido = validarCPF(document.getElementById('cpf').value);
-                        console.log(ehValido ? 'CPF válido!' : 'CPF inválido...');
-                    }
-                }, null)
-            ),
+			React.createElement('select', null,
+				React.createElement('option', null, 'Selecione um estado'),
+				function() {
+					var options = [];
+					Object.keys(estados).map(function(sigla) {
+						options.push(React.createElement('option', {value: sigla}, estados[sigla]));
+					});
+					return options;
+				}()
+			),
             document.getElementById('root')
         );
     </script>
 </body>
 </html>
+

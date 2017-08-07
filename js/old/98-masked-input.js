@@ -1,9 +1,10 @@
 var MaskedInput = React.createClass({
 	propTypes: {
-		id: React.PropTypes.string.isRequired,
+		id: React.PropTypes.string,
 		isReverse: React.PropTypes.bool,
 		placeHolder: React.PropTypes.string,
-		mask: React.PropTypes.string.isRequired
+		mask: React.PropTypes.string.isRequired,
+		defaultValue: React.PropTypes.string
 	},
 
 	getInitialState: function() {
