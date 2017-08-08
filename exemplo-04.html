@@ -1,13 +1,18 @@
-<html>
-<head><title>Exemplo 5</title></head>
+<html lang="ptbr">
+<head>
+	<meta charset="utf-8">
+	<title>Exemplo 04</title>
+</head>
 <body>
-    <form>
-        <div id="root"></div>
-    </form>
+    <div id="root"><!-- meu conteúdo será gerenciado pelo reactjs --></div>
     <script src="js/lib/react/react.js"></script>
     <script src="js/lib/react/react-dom.js"></script>
-    <script src="js/validador-de-cpf.js"></script>
-    <script src="js/04-componente-campo-cpf.js"></script>
-    <script src="js/04-app.js"></script>
+    <script src="js/lib/babel/babel.js"></script>
+    <script type="text/jsx">
+        ReactDOM.render(
+            <h1>Hello World!</h1>,
+            document.getElementById('root')
+        );
+    </script>
 </body>
 </html>

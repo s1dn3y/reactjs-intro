@@ -86,6 +86,11 @@
 					</section>
 
 					<section>
+						<p>Demonstração de SPA</p>
+						<p>github.com/s1dn3y/react-spa-demo</p>
+					</section>
+
+					<section>
 						<p>Oferece performance com Virtual DOM</p>
 						<img src='img/apresentacao/virtual-dom-update.png'></img>
 					</section>
@@ -111,45 +116,13 @@
 						<ul>
 							<li class="fragment fade-up">Instalação</li>
 							<li class="fragment fade-up">Rumo ao componente</li>
-							<li class="fragment fade-up">JSX (Babel, EcmaScript2015 e 2016</li>
-							<li class="fragment fade-up">Webpack</li>
+							<li class="fragment fade-up">JSX</li>
+							<li class="fragment fade-up">Próximos capítulos</li>
 							<li class="fragment fade-up">Agradecimentos</li>
 						</ul>
 					</section>
 
 				</section>
-<!--
-Agenda:
-
-instalação e uso
-	baixar e referenciar no html
-	exemplo 1
-	Classes React e ReactDOM
-virtual DOM
-Componente
-	propriedades (argumentos de inicialização)
-		this.props
-		this.propTypes
-	estado
-		value VS defaultValue
-		this.state
-	eventos sitéticos
-		vantagem
-	ciclo de vida
-		componentWillMount
-		componentDidMount
-		componentWillUpdate
-		componentDidUpdate
-		shouldComponentUpdate
-JSX
-Webpack
-	Node.js como base para ferramentas de apoio (para várias plataformas)
-		Talvez você até já usa e não saiba
-		npm
-		instalação do Webpack
-	Exemplo rodando sobre Webpack
-Agradecimentos
--->
 
 				<section>
 					<h4>Instalação e uso</h4>
@@ -245,23 +218,45 @@ Agradecimentos
 						</ul>
 					</section>
 					
-
-
 					<section>
 						<p>Exemplo 3</p>
 						<p>O que veremos?</p>
 						<ul>
 							<li>Combo de estados reutilizável</li>
+							<li>Mais propriedades</li>
+							<li>Introdução ao controle de <em>estado</em></li>
 						</ul>
 					</section>
 
 					<section>
-						<p>Combo de estados</p>
-						<pre><code class="js line-numbers" data-highlight-lines="1,4,5,7,10" data-trim>		var estados = {
-			'AC': 'Acre', ..., 'TO': 'Tocantins'
-		};
+						<p>Combo de estados - HTML</p>
+						<pre><code class="html line-numbers" data-highlight-lines="5" data-trim>	...
+	&lt;script src="js/03-componente-combo-estados.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
 		ReactDOM.render(
-			React.createElement('select', null,
+			React.createElement(ComboDeEstados, null, null),
+			document.getElementById('root')
+		);
+	&lt;/script&gt;
+	...</code></pre>
+					</section>
+					
+
+
+					<section>
+						<p>Combo de estados - JavaScript</p>
+						<pre><code class="js line-numbers" data-highlight-lines="2,4,5,12,13,16,17" data-trim>var estados = {'AC': 'Acre', ..., 'TO': 'Tocantins'};
+var ComboDeEstados = React.createClass({
+	propTypes: {
+		id: React.PropTypes.string,
+		defaultValue: React.PropTypes.string
+	},
+
+	render: function() {
+		var propriedades = popularObjetoCom({id: this.props.id, defaultValue: this.props.defaultValue});
+
+		return (
+			React.createElement('select', propriedades,
 				React.createElement('option', null, 'Selecione um estado'),
 				function() {
 					var options = [];
@@ -270,98 +265,25 @@ Agradecimentos
 					});
 					return options;
 				}()
-			),
-			document.getElementById('root')
-		);</code></pre>
+			)
+		);
+	}
+});</code></pre>
 					</section>
 
 					<section>
 						<p>Que problemas nós vimos?</p>
 						<ul>
-							<li class="fragment fade-up">Lógica dentro do index.html</li>
-							<li class="fragment fade-up">Ainda tem código no index.html</li>
 							<li class="fragment fade-up">Ainda com muito código (boilerplate)</li>
 							<li class="fragment fade-up">Não favorece o trabalho de UI</li>
 						</ul>
 					</section>
-					
-
-
-
-<section>
-	<p>Propriedades <em>class</em> e <em>for</em></p>
-	<ul>
-		<li class="fragment fade-up">Uso de propriedades (argumentos)</li>
-		<li class="fragment fade-up"><em>htmlFor</em> e <em>style</em></li>
-		<li class="fragment fade-up"><em>className</em> (css inline nunca!)</li>
-		<li class="fragment fade-up">Palavras reservadas em JS: vDOM é um objeto</li>
-		<li class="fragment fade-up">Usar className e htmlFor</li>
-	</ul>
-</section>
-
-<section>
-	<p>Propriedade <em>style</em></p>
-	<ul>
-		<li class="fragment fade-up">Tem que ser um objeto e não uma string</li>
-		<li class="fragment fade-up">Por que não uma string como no HTML?</li>
-		<li class="fragment fade-up">Por performance e simplicidade!</li>
-		<li class="fragment fade-up">Dispensa o <em>parsing</em> da string</li>
-	</ul>
-</section>
-					
-					<section>
-						<p>Controlando o estado dos componentes</p>
-						<p>...</p>
-						<ul>
-							<li class="fragment fade-up">...</li>
-							<li class="fragment fade-up">...</li>
-						</ul>
-					</section>
-					
-					<section>
-						<p>Exemplo 4</p>
-						<p>O que veremos?</p>
-						<ul>
-							<li class="fragment fade-up">value VS defaultValue</li>  <!-- AQUI -->
-							<li class="fragment fade-up">O uso de this.propTypes</li>
-							<li class="fragment fade-up">O uso de this.state</li>
-						</ul>
-						<p class="fragment fade-up">Que problemas nós vimos?</p>
-						<ul>
-							<li class="fragment fade-up">Ainda tem muito código (boilerplate)</li>
-							<li class="fragment fade-up">Ainda não favorece o trabalho de UI</li>
-							<li class="fragment fade-up">Sempre define um FORM (desde Ex. 2)</li>
-						</ul>
-					</section>
 				</section>
-
-					<section>
-						<p>Métodos de ciclo de vida</p>
-						<ul>
-							<li class="fragment fade-up"></li>
-						</ul>
-					</section>
 					
-					<section>
-						<h4>Exemplo 5</h4>
-						<p>O que veremos?</p>
-						<ul>
-							<li class="fragment fade-up">componentWillMount()</li>
-							<li class="fragment fade-up">componentDidMount()</li>
-							<li class="fragment fade-up">componentWillUpdate()</li>
-							<li class="fragment fade-up">componentDidUpdate()</li>
-							<li class="fragment fade-up">shouldComponentUpdate()</li>
-						</ul>
-						<p class="fragment fade-up">Que problemas nós vimos?</p>
-						<ul>
-							<li class="fragment fade-up"></li>
-						</ul>
-					</section>
-
 				<section>
+					<h4>JSX</h4>
 					<section>
-						<h4>JSX - Feio, mas nen tanto...</h4>
-						<p></p>
+						<p>Feio, mas nen tanto...</p>
 						<ul>
 							<li class="fragment fade-up">É preprocessado e transformado em JS</li>
 							<li class="fragment fade-up">Préprocessamento ocorre no deploy</li>
@@ -372,273 +294,52 @@ Agradecimentos
 					</section>
 
 					<section>
-						<p>Exemplo 6 - Olá Mundo (by JSX)</p>
+						<p>Exemplo 4</p>
 						<p>O que veremos?</p>
 						<ul>
-							<li class="fragment fade-up">Código JSX</li>
-						</ul>
-						<p class="fragment fade-up">Que problemas nós vimos?</p>
-						<ul>
-							<li class="fragment fade-up">Mistura código JS com "html"</li>
-							<li class="fragment fade-up">Porém, frescura-free!!</li>
-							<li class="fragment fade-up">Alguém percebeu um outro problema? (dev/prod)</li>
+							<li class="fragment fade-up">Olá JSX!</li>
 						</ul>
 					</section>
 
 					<section>
-						<p>Exemplo 7</p>
-						<p>O que veremos?</p>
+						<p>Que problemas nós vimos?</p>
 						<ul>
-							<li class="fragment fade-up">JS dentro do JSX com {...}</li>
-							<li class="fragment fade-up">Eventos</li>
-							<li class="fragment fade-up">onChange (simplicidade no tratamento de digitação: sem depender de keyUp() etc.</li>
-							<li class="fragment fade-up">TEXTAREA e SELECT (value e default)</li>
-						</ul>
-						<p class="fragment fade-up">Que problemas nós vimos?</p>
-						<ul>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
+							<li class="fragment fade-up">Mistura código JS com "HTML"</li>
+							<li class="fragment fade-up">Porém, frescura-free galera!!</li>
+							<li class="fragment fade-up">Alguém percebeu um outro problema?</li>
 						</ul>
 					</section>
-					
 
 					<section>
-						<p>Exemplo 8 - validador de cpf (versão JSX)</p>
+						<p>Vamos codar!</p>
 						<p>O que veremos?</p>
 						<ul>
-							<li class="fragment fade-up">Favorecer reutilização (tirar o FORM)</li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-						</ul>
-						<p class="fragment fade-up">Que problemas nós vimos?</p>
-						<ul>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
+							<li class="fragment fade-up">Transformar combo de estados em JSX</li>
 						</ul>
 					</section>
 				</section>
 
 				<section>
-					<section>
-						<h4></h4>
-						<p></p>
-						<ul>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-						</ul>
-					</section>
-					
-					<section>
-						<p>Exemplo </p>
-						<p>O que veremos?</p>
-						<ul>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-						</ul>
-						<p class="fragment fade-up">Que problemas nós vimos?</p>
-						<ul>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-						</ul>
-					</section>
+					<h4>Próximos capítulos</h4>
+					<ul>
+						<li class="fragment fade-up">WebPack</li>
+						<li class="fragment fade-up">Babel (JS6 e JS7)</li>
+						<li class="fragment fade-up">Flux</li>
+						<li class="fragment fade-up">Flow</li>
+						<li class="fragment fade-up">Teste</li>
+						<li class="fragment fade-up">Aplicação (SPA) competla</li>
+					</ul>
 				</section>
 
 				<section>
-					<section>
-						<h4></h4>
-						<p></p>
-						<ul>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-							<li class="fragment fade-up"></li>
-						</ul>
-					</section>
-			        
-                    <section>
-                        <p>Exemplo </p>
-                        <p>O que veremos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                        <p class="fragment fade-up">Que problemas nós vimos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h4></h4>
-                        <p></p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                    </section>
-                    
-                    <section>
-                        <p>Exemplo </p>
-                        <p>O que veremos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                        <p class="fragment fade-up">Que problemas nós vimos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h4></h4>
-                        <p></p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                    </section>
-                    
-                    <section>
-                        <p>Exemplo </p>
-                        <p>O que veremos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                        <p class="fragment fade-up">Que problemas nós vimos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h4></h4>
-                        <p></p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                    </section>
-                    
-                    <section>
-                        <p>Exemplo </p>
-                        <p>O que veremos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                        <p class="fragment fade-up">Que problemas nós vimos?</p>
-                        <ul>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                            <li class="fragment fade-up"></li>
-                        </ul>
-                    </section>
-                </section>
-                
-
-
-				<section>
-                    <h4>Slide 2</h4>
-                    <section>
-                        <pre>
-                            <code class="hljs" data-trim contenteditable>
-var f1 = function(name) {
-    return {
-        name: name,
-        getName: function() {return this.name;}
-    }
-};
-                            </code>
-                        </pre>
-                    </section>
-                </section>
+					<h4>Agradecimentos</h4>
+					<p>
+						Sidney Amaral<br/><br/>
+						sidney.amaral@rio.rj.gov.br<br/>
+						twitter/@s1dn3y<br/>
+						github.com/s1dn3y<br/>
+					</p>
+				</section>
 			</div>
 		</div>
 		<script src="js/lib/reveal/head.min.js"></script>
@@ -650,7 +351,7 @@ var f1 = function(name) {
 				history: true,
 				center: false,
 				minScale: 0.2,
-//                viewDistance: 2,
+//				viewDistance: 2,
 
 				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
@@ -658,9 +359,9 @@ var f1 = function(name) {
 					{ src: 'js/lib/reveal/plugins/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'js/lib/reveal/plugins/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 //					{ src: 'js/lib/reveal/plugins/zoom.js', async: true },
-//                    { src: 'js/lib/reveal/plugins/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
-                    { src: 'js/lib/reveal/plugins/js/highlightfragment.js', async: true },
-                    {src: 'js/lib/reveal/plugins/line-numbers.js'},
+//					{ src: 'js/lib/reveal/plugins/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
+					{ src: 'js/lib/reveal/plugins/js/highlightfragment.js', async: true },
+					{src: 'js/lib/reveal/plugins/line-numbers.js'},
 					{ src: 'js/lib/reveal/plugins/notes.js', async: true }
 				]
 			});
