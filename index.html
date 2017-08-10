@@ -32,18 +32,18 @@
 					<section class="center">
 						<p>Agenda</p>
 						<ul>
-							<li class="fragment fade-up">Introdução</li>
-							<li class="fragment fade-up">Instalação</li>
-							<li class="fragment fade-up">Rumo ao componente</li>
-							<li class="fragment fade-up">JSX</li>
-							<li class="fragment fade-up">Próximos capítulos</li>
-							<li class="fragment fade-up">Agradecimentos</li>
+							<li>Introdução</li>
+							<li>Instalação</li>
+							<li>Rumo ao componente</li>
+							<li>JSX e ES2015</li>
+							<li>Próximos capítulos</li>
+							<li>Agradecimentos</li>
 						</ul>
 					</section>
 					
 					<section class="center">
 						<ul>
-							<li class="fragment fade-up">"Biblioteca em JavaScript para construção de UI"</li>
+							<li>"Biblioteca em JavaScript para construção de UI"</li>
 							<li class="fragment fade-up">Coesa - única responsabilidade é cuidar da UI</li>
 							<li class="fragment fade-up">Amadurecida: versão atual v15.6.1, primeiro<br/>release feito em 29/Mai/2013</li>
 							<li class="fragment fade-up">Farta documentação, tutoriais, exemplos e vídeos<br/>no site <em>www.reactjs.com</em></li>
@@ -65,30 +65,32 @@
 
 					<section>
 						<p>Ah! Biblioteca para construção de UI???</p>
+						<p>Então eu vou ter....</p>
 					</section>
 
 					<section>
-						<p>Eu vou ter isso?</p>
+						<p>Algo assim?</p>
 						<p><img src='img/apresentacao/best-UI-1.jpg'></img></p>
 					</section>
 
 					<section>
-						<p>Ou isso????</p>
+						<p>Ou assim????</p>
 						<p><img src='img/apresentacao/best-UI-2.png'></img></p>
 					</section>
 
 					<section>
-						<p>React permite criar componentes visuais ricos, mas a resposta depende de ...</p>
+						<p>Vai depender de ...</p>
 						<ul>
 							<li>Requisitos</li>
 							<li>Usuário</li>
 							<li>Custo</li>
 							<li>Criatividade</li>
 						</ul>
+						<p class="fragment fade-up">React te dá meios pra chegar lá!!</p>
 					</section>
 					
 					<section>
-						<p>E toda grande UI começa com pequenas partes</p>
+						<p>Mas toda UI começa pelos componentes...</p>
 						<img src='img/apresentacao/combo-box-UI.png'></img>
 					</section>
 					
@@ -116,11 +118,6 @@
 							<li class="fragment fade-up"><em>event</em> ou <em>window.event</em> ??</li>
 							<li class="fragment fade-up"><em>event.target</em> ou <em>event.srcElement</em> ??</li>
 						</ul>
-					</section>
-
-					<section class="center">
-						<p>Qual será a abordagem deste talk?</p>
-						<p class="fragment fade-up red">Introdutória e elementar...</p>
 					</section>
 
 				</section>
@@ -152,21 +149,6 @@
 						</ul>
 					</section>
 
-					<section>
-						<p>Olá Mundo!</p>
-						<pre><code class="html line-numbers" data-highlight-lines="3,4,6-8" data-trim>	...
-	&lt;div id=&quot;root&quot;&gt;&lt;!-- meu conte&uacute;do ser&aacute; gerenciado pelo reactjs --&gt;&lt;/div&gt;
-	&lt;script src=&quot;js/lib/react.js&quot;&gt;&lt;/script&gt;
-	&lt;script src=&quot;js/lib/react-dom.js&quot;&gt;&lt;/script&gt;
-	&lt;script&gt;
-		ReactDOM.render(
-			React.createElement('h1', null, &quot;Ol&aacute; Mundo!&quot;),
-			document.getElementById('root')
-		);
-	&lt;/script&gt;
-	...</code></pre>
-					</section>
-
 				</section>
 				
 				<section>
@@ -191,27 +173,7 @@
 					</section>
 
 					<section>
-						<p>Combo de estados</p>
-						<pre><code class="js line-numbers" data-highlight-lines="1,4,5,7,10" data-trim>		var estados = {
-			'AC': 'Acre', ..., 'TO': 'Tocantins'
-		};
-		ReactDOM.render(
-			React.createElement('select', null,
-				React.createElement('option', null, 'Selecione um estado'),
-				function() {
-					var options = [];
-					Object.keys(estados).map(function(sigla) {
-						options.push(React.createElement('option', {value: sigla}, estados[sigla]));
-					});
-					return options;
-				}()
-			),
-			document.getElementById('root')
-		);</code></pre>
-					</section>
-
-					<section>
-						<p>Que problemas nós vimos?</p>
+						<p>Quais problemas nós vimos?</p>
 						<ul>
 							<li class="fragment fade-up">Lógica dentro do index.html</li>
 							<li class="fragment fade-up">Não é reutilizável</li>
@@ -230,50 +192,7 @@
 					</section>
 
 					<section>
-						<p>Combo de estados - HTML</p>
-						<pre><code class="html line-numbers" data-highlight-lines="5" data-trim>	...
-	&lt;script src="js/03-componente-combo-estados.js"&gt;&lt;/script&gt;
-	&lt;script&gt;
-		ReactDOM.render(
-			React.createElement(ComboDeEstados, null, null),
-			document.getElementById('root')
-		);
-	&lt;/script&gt;
-	...</code></pre>
-					</section>
-					
-
-
-					<section>
-						<p>Combo de estados - JavaScript</p>
-						<pre><code class="js line-numbers" data-highlight-lines="2,4,5,12,13,16,17" data-trim>var estados = {'AC': 'Acre', ..., 'TO': 'Tocantins'};
-var ComboDeEstados = React.createClass({
-	propTypes: {
-		id: React.PropTypes.string,
-		defaultValue: React.PropTypes.string
-	},
-
-	render: function() {
-		var propriedades = popularObjetoCom({id: this.props.id, defaultValue: this.props.defaultValue});
-
-		return (
-			React.createElement('select', propriedades,
-				React.createElement('option', null, 'Selecione um estado'),
-				function() {
-					var options = [];
-					Object.keys(estados).map(function(sigla) {
-						options.push(React.createElement('option', {value: sigla}, estados[sigla]));
-					});
-					return options;
-				}()
-			)
-		);
-	}
-});</code></pre>
-					</section>
-
-					<section>
-						<p>Que problemas nós vimos?</p>
+						<p>Quais problemas nós vimos?</p>
 						<ul>
 							<li class="fragment fade-up">Ainda com muito código (boilerplate)</li>
 							<li class="fragment fade-up">Não favorece o trabalho de UI</li>
@@ -282,9 +201,9 @@ var ComboDeEstados = React.createClass({
 				</section>
 					
 				<section>
-					<h4>JSX</h4>
+					<h4>JSX e ES2015</h4>
 					<section>
-						<p>Feio, mas nem tanto...</p>
+						<p>JSX: Feio, mas nem tanto</p>
 						<ul>
 							<li class="fragment fade-up">É preprocessado e transformado em JS</li>
 							<li class="fragment fade-up">Preprocessamento ocorre no deploy</li>
@@ -303,28 +222,93 @@ var ComboDeEstados = React.createClass({
 					</section>
 
 					<section>
-						<p>Que problemas nós vimos?</p>
+						<p>Quais problemas nós vimos?</p>
 						<ul>
 							<li class="fragment fade-up">Mistura código JS com "HTML"</li>
 							<li class="fragment fade-up">Porém, frescura-free galera!!</li>
-							<li class="fragment fade-up">Alguém percebeu um outro problema?</li>
+							<li class="fragment fade-up">Só para os mais atentos: alguém<br/>
+								                         percebeu um outro problema??</li>
 						</ul>
 					</section>
 
 					<section>
-						<p>Vamos codar!</p>
+						<p>Exemplo 5</p>
 						<p>O que veremos?</p>
 						<ul>
-							<li class="fragment fade-up">Transformar combo de estados em JSX</li>
+							<li>O browser dando erro</li>
+							<li>Babel, XMLHttpRequest e solicitações 'cross origin'</li>
 						</ul>
 					</section>
+
+					<section>
+						<p>Exemplo 5 II - A missão</p>
+						<p>O que veremos?</p>
+						<ul>
+							<li>Liberando 'cross origin' - apenas para<br/>
+								efeito de teste</li>
+							<li>Combo de estados em JSX</li>
+							<!--
+								chrome: '--allow-file-access-from-files' na linha de comando
+								firefox: em 'about:config', alterar 'security.fileuri.strict_origin_policy' para false
+							-->
+						</ul>
+					</section>
+
+					<section>
+						<p>Quais problemas nós vimos?</p>
+						<ul>
+							<li class="fragment fade-up"><em>defaultValue</em> não funciona mais?</li>
+							<li class="fragment fade-up">Boilerplate para fazê-lo voltar<br/>
+								                         a funcionar...</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>ES2015: facilidades para o combo de estados</p>
+						<ul>
+							<li class="fragment fade-up">Muitas novidades: <em>class</em>, <em>extends</em>,<br/>
+														 <em>import</em> e muitas outras</li>
+							<li class="fragment fade-up"><em>spread operator</em></li>
+							<li class="fragment fade-up"><em>arrow functions</em></li>
+							<li class="fragment fade-up">Favorecem o design da UI!!</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>Exemplo 6</p>
+						<p>O que veremos?</p>
+						<ul>
+							<li class="fragment fade-up">Combo de estados anabolizado</li>
+							<li class="fragment fade-up"><em>defaultValue</em> funcionando!!</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>Quais problemas nós vimos?</p>
+						<ul>
+							<li class="fragment fade-up">Código ES5 misturado com ES2015!!</li>
+							<li class="fragment fade-up">React.createClass <em>deprecated</em> na versão 16.0.0<!!/li>
+						</ul>
+					</section>
+
+					<section>
+						<p>Exemplo 7</p>
+						<p>O que veremos?</p>
+						<ul>
+							<li class="fragment fade-up">Calça de veludo ou bumbum de fora</li>
+							<li class="fragment fade-up">Combo de estados ES2015!!</li>
+							<li class="fragment fade-up">Infelizmente não funciona pelo<br/>
+														 Babel standalone porque o browser<br/>
+														 não carraga módulos da ES2015</li>
+						</ul>
+					</section>
+
 				</section>
 
 				<section>
 					<h4>Próximos capítulos</h4>
 					<ul>
 						<li class="fragment fade-up">WebPack</li>
-						<li class="fragment fade-up">Babel (JS6 e JS7)</li>
 						<li class="fragment fade-up">Flux</li>
 						<li class="fragment fade-up">Flow</li>
 						<li class="fragment fade-up">Teste</li>

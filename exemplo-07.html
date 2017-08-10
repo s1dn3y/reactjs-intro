@@ -1,19 +1,20 @@
 <html lang="ptbr">
 <head>
 	<meta charset="utf-8">
-	<title>Exemplo 05</title>
+	<title>Exemplo 07</title>
 </head>
 <body>
     <div id="root"></div>
-    <script src="js/lib/react/react.js"></script>
-    <script src="js/lib/react/react-dom.js"></script>
     <script src="js/lib/babel/babel.js"></script>
     <script src="js/util.js"></script>
     <script src="js/const.js"></script>
-    <script type="text/jsx" src="js/05-componente-combo-estados.js"></script>
-    <script type="text/jsx">
+	<script type="text/babel" data-presets="es2015">
+
+		import ReactDOM, {Component, PropTypes} from 'react';
+		import ComboDeEstados from 'componente-combo-estados';
+
         ReactDOM.render(
-            <ComboDeEstados id='meuCombo' defaultValue='TO'/>,
+            <ComboDeEstados id='meuCombo' defaultValue='TO' />,
             document.getElementById('root')
         );
     </script>

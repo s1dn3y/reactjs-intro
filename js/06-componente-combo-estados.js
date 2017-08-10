@@ -11,13 +11,11 @@ var ComboDeEstados = React.createClass({
 		});
 
 		return (
-			<select>
+			<select {...propriedades}>
 				<option>Selecione um estado</option>
-				{Object.keys(estados).map(function(sigla) {
-					return (
-						<option value={sigla}>{estados[sigla]}</option>
-					);
-				})}
+				{Object.keys(estados).map(sigla =>
+					<option value={sigla} key={sigla}>{estados[sigla]}</option>
+				)}
 			</select>
 		);
 	}
