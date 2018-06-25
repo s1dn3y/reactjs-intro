@@ -12,7 +12,7 @@
     <script src="js/03-componente-combo-estados.js"></script>
     <script>
         ReactDOM.render(
-			React.createElement(ComboDeEstados, null, null),
+			React.createElement(ComboDeEstados, {id: 'meuCombo', defaultValue: 'TO'}, null),
             document.getElementById('root')
         );
     </script>
